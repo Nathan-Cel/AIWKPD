@@ -1,201 +1,173 @@
-# HTTP/HTTPS et API
+# HTTP, HTTPS et API
 
-Protocoles et Architecture Web
-# Concepts Fondamentaux
-## HTTP
+## 1. Concepts Essentiels
 
-HyperText Transfer Protocol -
-protocole de communication du
-web
+### **HTTP**
 
-## HTTPS
+Le *HyperText Transfer Protocol* est le protocole de base utilisé sur le
+Web pour échanger des données entre un client et un serveur.
 
-HTTP Secure - version sécurisée
-avec chiffrement TLS
+### **HTTPS**
 
-## API
+Version sécurisée de HTTP. Elle ajoute une couche de chiffrement grâce à
+TLS afin de garantir confidentialité et intégrité.
 
-Application Programming Interface -
-interface permettant aux logiciels
-de communiquer
+### **API**
 
-## TLS
+Une *Application Programming Interface* permet à différents logiciels de
+communiquer entre eux via un ensemble de règles et de formats définis.
 
-Transport Layer Security - protocole de sécurisation des
-communications
+### **TLS**
 
-## REST
+Le *Transport Layer Security* chiffre les communications, authentifie
+les serveurs et protège les données transportées.
 
-Representational State Transfer - architecture pour les
-services web
+### **REST**
 
-# Historique
-## HTTP/1.0
-1996 : Une requête par connexion
+*Representational State Transfer* : un style architectural pour
+concevoir des API simples, scalables et basées sur les ressources.
 
-## HTTP/1.1
-1999 : Connexions persistantes
+------------------------------------------------------------------------
 
-## HTTP/2
-2015 : Multiplexage
+## 2. Évolution des Versions HTTP
 
-## HTTP/3
-QUIC/UDP pour latence réduite
+-   **HTTP/1.0 (1996)** --- Une requête par connexion.\
+-   **HTTP/1.1 (1999)** --- Connexions persistantes, meilleures
+    performances.\
+-   **HTTP/2 (2015)** --- Multiplexage pour envoyer plusieurs requêtes
+    simultanément.\
+-   **HTTP/3** --- Basé sur QUIC (UDP) pour réduire la latence et
+    améliorer la fiabilité.
 
-# Anatomie d'une Requête HTTP
-1. Ligne de Requête
+------------------------------------------------------------------------
 
-Méthode + URL + Version HTTP
-GET /index.html HTTP/1.
+## 3. Structure d'une Requête HTTP
 
-2. En-têtes
+1.  **Ligne de requête**\
+    Exemple : `GET /index.html HTTP/1.1`
 
-Métadonnées : Host, User-Agent, Accept
+2.  **En-têtes**\
+    Métadonnées indiquant le type de client, le domaine ciblé, les
+    formats acceptés, etc.
 
-3. Corps
+3.  **Corps**\
+    Utilisé pour envoyer des données (POST, PUT...).
 
-Données envoyées (POST, PUT)
+------------------------------------------------------------------------
 
-# Anatomie d'une Réponse HTTP
-1. Ligne de Statut
-Version HTTP + Code + Message
-HTTP/1.1 200 OK
+## 4. Structure d'une Réponse HTTP
 
-2. En-têtes
-Content-Type, Content-Length, Cache-Control
+1.  **Ligne de statut**\
+    Exemple : `HTTP/1.1 200 OK`
 
-3. Corps
-Contenu demandé : HTML, JSON, données
+2.  **En-têtes**\
+    Type de contenu, taille, directives de cache, cookies...
 
-# Méthodes HTTP et Propriétés
+3.  **Corps**\
+    Contenu retourné (HTML, JSON, données brutes...).
 
-## GET
-Lire une ressource. Sécuritaire, idempotent.
+------------------------------------------------------------------------
 
-## POST
-Créer une ressource. Envoyer des données au serveur.
+## 5. Méthodes HTTP
 
-## PUT/PATCH
-Mettre à jour une ressource. Idempotents.
+-   **GET** --- Récupérer une ressource. *Sûr et idempotent.*\
+-   **POST** --- Créer ou envoyer des données au serveur.\
+-   **PUT / PATCH** --- Mettre à jour une ressource. *Idempotents.*\
+-   **DELETE** --- Supprimer une ressource. *Idempotent.*
 
-## DELETE
-Supprimer une ressource. Idempotent.
+------------------------------------------------------------------------
 
-# Codes de Statut HTTP
+## 6. Codes de Statut HTTP
 
-## 1xx
-Information
+-   **1xx --- Information**\
+-   **2xx --- Succès** : `200 OK`, `201 Created`\
+-   **3xx --- Redirection** : `301 Moved Permanently`\
+-   **4xx --- Erreurs Client** : `404 Not Found`, `403 Forbidden`\
+-   **5xx --- Erreurs Serveur** : `500 Internal Server Error`
 
-## 2xx
-Succès : 200 OK, 201 Created
+------------------------------------------------------------------------
 
-## 3xx
-Redirection : 301 Moved
+## 7. API Web et HTTP
 
-## 4xx
-Erreur Client : 404 Not Found, 403
-Forbidden
+Les API REST exploitent les concepts HTTP :\
+- **Ressources** identifiées par des URL\
+- **Méthodes** : GET, POST, PUT, DELETE\
+- **Réponses** : codes HTTP + données (souvent JSON)
 
-## 5xx
-Erreur Serveur : 500 Internal Error
+------------------------------------------------------------------------
 
-# API Web et HTTP
+## 8. Principaux En‑têtes HTTP
 
-Une API Web (REST) utilise HTTP comme protocole de transport. Elle reprend tous les concepts HTTP : ressources identifiées par URL, méthodes HTTP pour agir, codes de statut pour le résultat, données en JSON.
+### Côté Client → Serveur
 
-Ressources
-Identifiées par URL
+-   `Authorization`\
+-   `Cookie`\
+-   `Accept`\
+-   `User-Agent`
 
-Opérations
-GET, POST, PUT, DELETE
+### Côté Serveur → Client
 
-Réponses
-Codes HTTP et données JSON
+-   `Content-Type`\
+-   `Set-Cookie`\
+-   `Cache-Control`\
+-   `Strict-Transport-Security (HSTS)`
 
-# En-têtes HTTP
-## Requête (Client ³ Serveur)
+------------------------------------------------------------------------
 
-Authorization
-Cookie
-Accept
-User-Agent
+## 9. Sécurité : TLS
 
-## Réponse (Serveur ³ Client)
+TLS fournit :\
+- **Confidentialité** grâce au chiffrement\
+- **Intégrité** pour garantir l'absence de modifications\
+- **Authentification** via les certificats
 
-Content-Type
-Set-Cookie
-Cache-Control
-HSTS
+Le **handshake TLS** négocie les algorithmes, vérifie le certificat puis
+génère une clé de session. Après cela, tout le trafic HTTP est chiffré.
 
-# TLS (Transport Layer Security)
+------------------------------------------------------------------------
 
-Le Transport Layer Security (TLS), successeur de SSL, assure une communication sécurisée sur Internet à travers :
+## 10. SNI (Server Name Indication)
 
-# Confidentialité
-Chiffrement des données
+### Problème
 
-# Intégrité
-Détection des altérations
+Plusieurs sites hébergés sur une même IP doivent présenter le bon
+certificat.
 
-# Authentification
-Vérification du serveur via certificat
+### Fonction
 
-Le handshake TLS est un processus crucial qui négocie la version du protocole, les algorithmes de chiffrement et le certificat du
-serveur, puis génère les clés de session. Après cette étape, tout le contenu HTTP (y compris les en-têtes) est entièrement
-chiffré, garantissant ainsi la sécurité des échanges.
+Le client indique le nom de domaine lors du handshake TLS.
 
-#SNI (Server Name Indication)
+### Limite
 
-## Problème
-Plusieurs sites sur une même IP ³ comment choisir le bon certificat
-?
+Le nom de domaine reste visible en clair. L'ECH vise à le masquer.
 
-## Définition
-Extension TLS permettant au client de préciser le nom de domaine
-lors du handshake.
+------------------------------------------------------------------------
 
-## Limite
-Le domaine est visible en clair (mais pas le contenu) ³ ECH peut
-améliorer la confidentialité.
+## 11. CORS (Cross‑Origin Resource Sharing)
 
-Séquence typique
+Mécanisme permettant à une page Web d'accéder à une ressource située sur
+une origine différente.
 
-1. Client envoie SNI
-2. Serveur renvoie certificat
-3. TLS sécurisé
-4. HTTP envoyé dans le tunnel chiffré
+En‑têtes importants :\
+- `Access-Control-Allow-Origin`\
+- `Access-Control-Allow-Credentials`
 
-# CORS (Cross-Origin Resource Sharing)
+CORS complète la **Same-Origin Policy**.
 
-## Définition
-Permet l'accès à des ressources sur une autre origine
+------------------------------------------------------------------------
 
-## Fonction
-Sécurise les requêtes cross-Origin via XMLHttpRequest ou Fetch
+## 12. Stateful vs Stateless
 
-## En-têtes clés CORS
+### **Stateful**
 
-- Access-Control-Allow-Origin
-- Access-Control-Allow-Credentials
+-   Le serveur conserve un état (sessions, contexte).\
+-   Utile pour applications sensibles (banques, jeux).\
+-   Moins scalable.
 
-## Problème résolu
-Politique de même origine (Same-Origin Policy)
+### **Stateless**
 
-# Stateful vs Stateless
+-   Chaque requête est indépendante.\
+-   Plus simple, plus scalable.\
+-   Concept clé des API REST.
 
-## Stateful
-
-- Serveur conserve l'étatentre requêtes.
-- Dépend des sessions/cookies.
-- Exemples : banques, jeux en ligne.
-
-## Stateless
-
-- Serveur ne conserve pas l'état.
-- Requêtes indépendantes, plus scalable.
-- Exemples : API REST.
-
-## Différences
-
-Stateful : état conservé, complexe, moins scalable, vulnérable
-Stateless : pas d'état, simple, scalable, plus sûr.
+------------------------------------------------------------------------
