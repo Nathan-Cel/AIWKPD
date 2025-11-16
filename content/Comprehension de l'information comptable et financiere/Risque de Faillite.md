@@ -1,6 +1,6 @@
 
 
-| <div style="text-align:center">Actif</div>                                                              | <div style="text-align:center">Passif</div>                                                                                         |
+| <div>Actif</div>                                                              | <div>Passif</div>                                                                                         |
 | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | <br><br>- Actif Liquidable > 1 an (Immobilisation)<br><br><br>- Actif Liquidable < 1 an (Circulant)<br> | <br>- Passif non exigible (Capitaux Propres)<br><br><br>- Passif Exigible > 1 an (Emprunts)<br><br><br>- Passif Exigible < 1 an<br> |
 

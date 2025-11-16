@@ -1,7 +1,7 @@
 
 Pour calculer les de taux ROA et ROE on se base sur le bilan financier : 
 
-| <div style="text-align:center">Actif</div> | <div style="text-align:center">Passif</div>    |
+| <div>Actif</div> | <div>Passif</div>    |
 | ------------------------------------------ | ---------------------------------------------- |
 | - Actif Économique                         | - Capitaux Propres<br><br>- Dettes financières |
 
