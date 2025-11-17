@@ -1,5 +1,7 @@
 # HTTP, HTTPS et API
 
+Lien vers PDF : https://aivancity-my.sharepoint.com/:b:/g/personal/jhesime_konnon_aivancity_education/EUDBJruTP0RNrdKKfkH4x24BYEE_pPEV4HP7XDEumH_9CA?e=2blFCD
+
 ## 1. Concepts Essentiels
 
 ### **HTTP**

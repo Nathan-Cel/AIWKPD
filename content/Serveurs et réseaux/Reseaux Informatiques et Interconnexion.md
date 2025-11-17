@@ -1,5 +1,7 @@
 # Réseaux Informatiques et Interconnexion
 
+Lien vers le PDF : https://aivancity-my.sharepoint.com/:b:/g/personal/kheireddine_bouadi_aivancity_education/EfYqXXS_X_tMgR5AQ2fqv0UBfvK_CrgKNFBrpoCXXz1dwA?e=ufxQfS
+
 ## 1. Introduction Générale
 
 Un **réseau informatique** est un ensemble d'appareils (ordinateurs,

@@ -1,5 +1,7 @@
 # Système Informatique et Réseau
 
+Lien vers la diapo : https://aivancity-my.sharepoint.com/:b:/r/personal/tao_laou-hao_aivancity_education/Documents/Microsoft%20Teams%20Chat%20Files/Systeme-Informatique-et-Reseau.pdf?csf=1&web=1&e=Z90vuy
+
 ## 1. Adressage IP : Concepts Essentiels
 
 ### Principe d'une Adresse IP
